@@ -90,7 +90,7 @@
                     "host": "Локальный IP-адрес",
                     "token": "Токен",
                     "scan_interval": "Интервал обновления (секунды)",
-                    "miot_cloud": "Включить miot cloud (Конфигурация аккаунта в YAML)"
+                    "miot_cloud": "Включить miot cloud (Сначала настройте аккаунт в YAML)"
                 }
             },
             "cloud": {
@@ -173,11 +173,11 @@
                     "turntable": "Кодовый циферблат",
                     "nfc": "NFC",
                     "one_time_password": "Одноразовый пароль",
-                    "two_step_verification": "Двухфакторная верификация",
-                    "coercion": "Принуждение",
+                    "two_step_verification": "Двухфакторная проверка",
+                    "coercion": "Принудительно",
                     "homekit": "Homekit",
-                    "manual": "Вручную",
-                    "automatic": "Автоматически"
+                    "manual": "Ручной",
+                    "automatic": "Автоматический"
                 }
             },
             "lock_action": {
@@ -197,10 +197,10 @@
                 "state": {
                     "open": "Открыто",
                     "close": "Закрыто",
-                    "close_timeout": "Close timeout",
-                    "knock": "Knock",
-                    "breaking": "Break-in",
-                    "stuck": "Stuck"
+                    "close_timeout": "Время ожидания закрытия",
+                    "knock": "Стук",
+                    "breaking": "Взлом",
+                    "stuck": "Заклинило"
                 }
             }
         },
@@ -209,28 +209,28 @@
                 "state_attributes": {
                     "fan_mode": {
                         "state": {
-                            "auto": "Auto",
-                            "low": "Low",
-                            "medium": "Medium",
-                            "middle": "Medium",
-                            "high": "High",
-                            "quiet": "Quiet",
-                            "turbo": "Turbo",
-                            "level1": "Level 1",
-                            "level2": "Level 2",
-                            "level3": "Level 3",
-                            "level4": "Level 4",
-                            "level5": "Level 5",
-                            "level6": "Level 6",
-                            "level7": "Level 7"
+                            "auto": "Авто",
+                            "low": "Слабый",
+                            "medium": "Средний",
+                            "middle": "Средний",
+                            "high": "Мощный",
+                            "quiet": "Тихий",
+                            "turbo": "Турбо",
+                            "level1": "Уровен 1",
+                            "level2": "Уровень 2",
+                            "level3": "Уровень 3",
+                            "level4": "Уровень 4",
+                            "level5": "Уровень 5",
+                            "level6": "Уровень 6",
+                            "level7": "Уровень 7"
                         }
                     },
                     "swing_mode": {
                         "state": {
-                            "off": "Off",
-                            "vertical": "Vertical",
-                            "horizontal": "Horizontal",
-                            "both": "Both"
+                            "off": "Вылючен",
+                            "vertical": "Вертикальный",
+                            "horizontal": "Горизонтальный",
+                            "both": "Оба"
                         }
                     }
                 }
@@ -239,8 +239,8 @@
     },
     "services": {
         "send_command": {
-            "name": "Send command",
-            "description": "Send miio command",
+            "name": "Отправить коммнду",
+            "description": "Отправить miio комманду",
             "fields": {
                 "entity_id": {
                     "name": "Entity ID",
@@ -257,8 +257,8 @@
             }
         },
         "get_properties": {
-            "name": "Get properties",
-            "description": "Get miot properties",
+            "name": "Получить свойства",
+            "description": "Получить свойства miot",
             "fields": {
                 "entity_id": {
                     "name": "Entity ID",
@@ -275,8 +275,8 @@
             }
         },
         "set_property": {
-            "name": "Set property",
-            "description": "Set miot property",
+            "name": "Установить свойство",
+            "description": "Установить miot свойство",
             "fields": {
                 "entity_id": {
                     "name": "Entity ID",
@@ -293,8 +293,8 @@
             }
         },
         "set_miot_property": {
-            "name": "Set miot property",
-            "description": "Set miot property by siid/piid",
+            "name": "Установить miot свойство",
+            "description": "Установить miot свойство по siid/piid",
             "fields": {
                 "entity_id": {
                     "name": "Entity ID",
@@ -315,8 +315,8 @@
             }
         },
         "call_action": {
-            "name": "Call action",
-            "description": "Call miot action",
+            "name": "Вызвать действие",
+            "description": "Вызвать miot действие",
             "fields": {
                 "entity_id": {
                     "name": "Entity ID",
@@ -373,8 +373,8 @@
             }
         },
         "get_device_data": {
-            "name": "Get device data",
-            "description": "Get xiaomi device data from cloud",
+            "name": "Получить данные устройства",
+            "description": "Получить данные устройства Xiaomi из облака",
             "fields": {
                 "entity_id": {
                     "name": "Entity ID",
@@ -407,8 +407,8 @@
             }
         },
         "renew_devices": {
-            "name": "Renew devices",
-            "description": "Renew cached xiaomi devices",
+            "name": "Обновить устройства",
+            "description": "Обновить кэшированные устройства Xiaomi",
             "fields": {
                 "username": {
                     "name": "Username",
@@ -417,8 +417,8 @@
             }
         },
         "get_token": {
-            "name": "Get token",
-            "description": "Get xiaomi device token",
+            "name": "Получить токен",
+            "description": "Получить токен устройства Xiaomi",
             "fields": {
                 "name": {
                     "name": "Name",
@@ -427,8 +427,8 @@
             }
         },
         "get_bindkey": {
-            "name": "Get bindkey",
-            "description": "Get bindkey for ble device",
+            "name": "Получить bindkey",
+            "description": "Получить bindkey для BLE-устройства",
             "fields": {
                 "entity_id": {
                     "name": "Entity ID",
@@ -441,8 +441,8 @@
             }
         },
         "request_xiaomi_api": {
-            "name": "Request xiaomi API",
-            "description": "Request xiaomi API",
+            "name": "Запрос к Xiaomi API",
+            "description": "Выполнить запрос к API Xiaomi",
             "fields": {
                 "entity_id": {
                     "name": "Entity ID",
